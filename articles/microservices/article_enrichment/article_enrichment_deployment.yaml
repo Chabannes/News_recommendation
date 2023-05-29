@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: article-enrichment
+spec:
+  replicas: 1  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: article-enrichment
+  template:
+    metadata:
+      labels:
+        app: article-enrichment
+    spec:
+      imagePullSecrets:
+        - name: acr-reco-secret
+      containers:
+        - name: article-enrichment-container
+          image: amavlarecommendation.azurecr.io/articles:article-enrichment-latest
+          imagePullPolicy: Always
+          # Add any other necessary container configurations here
+
+
