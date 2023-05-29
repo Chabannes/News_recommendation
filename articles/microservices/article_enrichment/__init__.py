@@ -17,13 +17,10 @@ from gremlin_python.driver.driver_remote_connection import DriverRemoteConnectio
 from sentence_transformers import SentenceTransformer, util
 
 from azure.eventhub.extensions.checkpointstoreblobaio import BlobCheckpointStore
-from datetime import datetime, timedelta
-
 
 import nest_asyncio
 nest_asyncio.apply()
 import asyncio
-
 
 
 
